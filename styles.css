@@ -1,0 +1,385 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 350px;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 15px;
+}
+
+h1 {
+  color: #4285f4;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#userEmail {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #3367d6;
+}
+
+#email-setup {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+#add-item {
+  margin-bottom: 20px;
+}
+
+.check-interval-container {
+  position: relative;
+  width: 95%;
+  margin-bottom: 10px;
+  border: 1px solid #e0e0e0;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.interval-info {
+  position: relative;
+  display: inline-block;
+}
+
+.info-icon {
+  position: absolute;
+  right: 10px;
+  top: -30px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.interval-tooltip {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  width: 200px;
+  top: -10px;
+  right: 30px;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.check-interval-info {
+  color: #666;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+#check-interval {
+  padding-right: 30px; /* Make room for the info icon */
+  border-color: #4285f4;
+  background-color: #fff;
+  appearance: textfield; /* Remove spinner controls on some browsers */
+  -moz-appearance: textfield; /* Firefox */
+}
+
+/* Hide spinner for Chrome, Safari, Edge, Opera */
+#check-interval::-webkit-outer-spin-button,
+#check-interval::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#products-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.server-status {
+  font-size: 12px;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.server-status.online {
+  background-color: #e6f4ea;
+  color: #137333;
+  border: 1px solid #137333;
+}
+
+.server-status.offline {
+  background-color: #fce8e6;
+  color: #c5221f;
+  border: 1px solid #c5221f;
+}
+
+.product-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-product {
+  background-color: #f0f8ff; /* Light blue background */
+  border-left: 3px solid #4285f4; /* Blue border on the left */
+  animation: fadeBackground 3s ease-in-out; /* Animation to fade out the background */
+}
+
+@keyframes fadeBackground {
+  from { background-color: #f0f8ff; }
+  to { background-color: transparent; }
+}
+
+.product-details {
+  flex-grow: 1;
+}
+
+.product-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  color: #4285f4;
+}
+
+.delete-btn {
+  color: red;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#status-message {
+  margin-top: 10px;
+  padding: 5px;
+  text-align: center;
+  color: #4285f4;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+.info {
+  color: #4285f4;
+}
+
+.check-prices-btn {
+  margin: 10px 0;
+  background-color: #fbbc04;
+  color: white;
+}
+
+.check-prices-btn:hover {
+  background-color: #e0a800;
+}
+
+.interval-quick-presets {
+  display: flex;
+  gap: 5px;
+  margin: 8px 0;
+}
+
+.preset-btn {
+  background-color: #f1f1f1;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  flex: 1;
+  margin: 0;
+  min-width: 0;
+  text-align: center;
+  font-weight: normal;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.preset-btn:hover {
+  background-color: #e3e3e3;
+  border-color: #ccc;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 3px rgba(0,0,0,0.15);
+}
+
+.preset-btn.active {
+  background-color: #4285f4;
+  color: white;
+  border-color: #3367d6;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2) inset;
+}
+
+/* Modal styles for price error disclaimer */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 320px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.modal-close {
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.modal-body {
+  padding: 15px;
+}
+
+.modal-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-footer button {
+  width: auto;
+  padding: 8px 15px;
+  background-color: #ddd;
+  color: #333;
+}
+
+.price-confirm-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.price-confirm-footer button {
+  flex: 1;
+}
+
+.error-button {
+  background-color: #ea4335 !important;
+  color: white !important;
+}
+
+.success-button {
+  background-color: #34a853 !important;
+  color: white !important;
+}
+
+.error-options {
+  margin-top: 10px;
+}
+
+.error-options button {
+  margin-bottom: 5px;
+  background-color: #4285f4;
+}
+
+.error-options button:first-child {
+  background-color: #fbbc04;
+}
+
+.option-desc {
+  font-size: 12px;
+  margin: 5px 0 15px 0;
+  color: #666;
+}
+
+.price-error-icon {
+  color: orange;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Styling for the "having troubles?" text */
+.troubles-text {
+  color: #0066cc;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  margin: 5px 0;
+}
+
+.troubles-text:hover {
+  color: #004499;
+}
+
+.success-message {
+  color: #28a745;
+  margin-top: 10px;
+  display: none;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Price Drop Alert</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Price Drop Alert</h1>
+    
+    <div id="email-setup">
+      <input type="email" id="user-email" placeholder="Your email for notifications">
+      <button id="save-email-button">Save Email</button>
+      <div id="successMessage" class="success-message"></div>
+    </div>
+    
+    <div id="add-item">
+      <input type="text" id="product-url" placeholder="Paste product URL here">
+      <input type="number" id="target-price" placeholder="Target price">
+      <div class="check-interval-container">
+        <div style="font-size: 12px; margin-bottom: 5px; color: #666;">Check frequency (in seconds):</div>
+        <input type="number" min="60" id="check-interval" placeholder="Default: 86400 (1 day)">
+        <div class="interval-quick-presets">
+          <button class="preset-btn" data-seconds="120">2 min</button>
+          <button class="preset-btn" data-seconds="300">5 min</button>
+          <button class="preset-btn" data-seconds="3600">1 hour</button>
+          <button class="preset-btn" data-seconds="86400">1 day</button>
+        </div>
+        <div class="interval-info">
+          <span class="info-icon">ℹ️</span>
+          <div class="interval-tooltip">
+            Common intervals:<br>
+            - 60 seconds = 1 minute<br>
+            - 120 seconds = 2 minutes<br>
+            - 300 seconds = 5 minutes<br>
+            - 3600 seconds = 1 hour<br>
+            - 43200 seconds = 12 hours<br>
+            - 86400 seconds = 1 day
+          </div>
+        </div>
+      </div>
+      <button id="add-button">Track Price</button>
+    </div>
+    
+    <div id="tracking-list">
+      <h2>Tracking Products</h2>
+      <ul id="products-list"></ul>
+    </div>
+    
+    <div id="status-message"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 
