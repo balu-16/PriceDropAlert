@@ -27,22 +27,6 @@ Before using this project, make sure you have the following:
 
 ---
 
-## 📂 Code Structure
-
-📂 price-drop-alert  
-├── 📁 public  
-├── 📁 src  
-│   ├── 📁 components  
-│   ├── 📁 utils  
-│   ├── 📝 App.js  
-│   ├── 📝 index.js  
-├── 📝 package.json  
-├── 📝 README.md  
-├── 📝 .gitignore  
-├── 📁 assets *(optional: product images/icons)*  
-
----
-
 ## 📦 Dependencies
 
 The following packages are used in this project:
